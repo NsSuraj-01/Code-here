@@ -56,6 +56,6 @@ Constraints
 
 Instructions
 
-	1.	Fork this repository to start working on the problem.
+	1.	start working on the problem.
 	2.	Implement your solution.
-	3.	Submit your solution by creating a pull request to this repository.
+	3.	Submit your solution by pushing your code to this repository.
