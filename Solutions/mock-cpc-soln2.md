@@ -1,6 +1,14 @@
 ## Summation of all triplets
 ### Java
 ```java
+static class STree {
+    int tree[];
+    public STree(int arr[]) {
+        int size = arr.length;
+        tree = new int[4*size + 1];
+        build(arr, 0, 0, size-1);
+    }
+
     public int build(int arr[], int node, int left, int right) {
         if(left == right) {
             return tree[node] = arr[left];
@@ -75,7 +83,6 @@ public static int summationOfTrips(int arr[], int queries[][]) {
         }
     }
 
-    // Use sorting for optimised triplets summation
     int sum = 0;
     for (int i = 0; i < n - 2; i++) {
         for (int j = i + 1; j < n - 1; j++) {
