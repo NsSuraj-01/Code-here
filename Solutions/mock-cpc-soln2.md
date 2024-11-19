@@ -1,5 +1,5 @@
 ## Summation of all triplets
-
+### Java
 ```java
     public int build(int arr[], int node, int left, int right) {
         if(left == right) {
@@ -99,6 +99,8 @@ public static void main(String[] args) {
 }
 
 ```
+--- 
+### Python
 ```python
 class SegmentTree:
     def __init__(self, arr):
