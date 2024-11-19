@@ -54,8 +54,8 @@ Array A of length N
 A 2D array operations consisting of Q rows and 4 columns
 You need to process Q operations on array A of two types:
 
-Increase each number in the subarray [L, R] by X.
-Decrease each number in the subarray [L, R] by X.
+Q[0] : Increase each number in the subarray [L, R] by X.
+Q[1] : Decrease each number in the subarray [L, R] by X.
 After performing all Q operations on array A, find the summation of A[i] + A[j] + A[k] over all triplets (i, j, k) such that 1 ≤ i < j < k ≤ N. Since the answer can be large, return it modulo 10^9+7.
 
 ---
