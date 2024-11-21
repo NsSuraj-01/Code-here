@@ -1,3 +1,101 @@
+## Smallest string problem
+### Java
+```java
+import java.util.HashSet;
+
+public class SmallestNonSubstring {
+    public static String findSmallestNonSubstring(String[] strings) {
+        HashSet<String> substrings = new HashSet<>();
+        
+        // Collect all substrings of length 1 and 2 from the input strings
+        for (String s : strings) {
+            for (int length = 1; length <= 2; length++) {
+                for (int i = 0; i <= s.length() - length; i++) {
+                    substrings.add(s.substring(i, i + length));
+                }
+            }
+        }
+        
+        // Check for single-character strings
+        for (char c = 'a'; c <= 'z'; c++) {
+            String candidate = String.valueOf(c);
+            if (!substrings.contains(candidate)) {
+                return candidate;
+            }
+        }
+        
+        // Check for two-character strings
+        for (char c1 = 'a'; c1 <= 'z'; c1++) {
+            for (char c2 = 'a'; c2 <= 'z'; c2++) {
+                String candidate = "" + c1 + c2;
+                if (!substrings.contains(candidate)) {
+                    return candidate;
+                }
+            }
+        }
+        
+        // Check for three-character strings
+        for (char c1 = 'a'; c1 <= 'z'; c1++) {
+            for (char c2 = 'a'; c2 <= 'z'; c2++) {
+                for (char c3 = 'a'; c3 <= 'z'; c3++) {
+                    String candidate = "" + c1 + c2 + c3;
+                    if (!substrings.contains(candidate)) {
+                        return candidate;
+                    }
+                }
+            }
+        }
+        
+        // If no string found (which is unlikely), return an empty string
+        return "";
+    }
+
+    public static void main(String[] args) {
+        String[] strings = {"abc", "bca"};
+        System.out.println(findSmallestNonSubstring(strings)); // Output: "d"
+    }
+}
+```
+### Python
+```python
+def find_smallest_non_substring(strings):
+    substrings = set()
+    
+    # Collect all substrings of length 1 and 2 from the input strings
+    for s in strings:
+        for length in range(1, 3):  # lengths 1 and 2
+            for i in range(len(s) - length + 1):
+                substrings.add(s[i:i + length])
+    
+    # Check for single-character strings
+    for c in range(ord('a'), ord('z') + 1):
+        candidate = chr(c)
+        if candidate not in substrings:
+            return candidate
+    
+    # Check for two-character strings
+    for c1 in range(ord('a'), ord('z') + 1):
+        for c2 in range(ord('a'), ord('z') + 1):
+            candidate = chr(c1) + chr(c2)
+            if candidate not in substrings:
+                return candidate
+    
+    # Check for three-character strings
+    for c1 in range(ord('a'), ord('z') + 1):
+        for c2 in range(ord('a'), ord('z') + 1):
+            for c3 in range(ord('a'), ord('z') + 1):
+                candidate = chr(c1) + chr(c2) + chr(c3)
+                if candidate not in substrings:
+                    return candidate
+    
+    # If no string found (which is unlikely), return an empty string
+    return ""
+
+# Example usage
+strings = ["abc", "bca"]
+print(find_smallest_non_substring(strings))  # Output: "d"
+```
+
 ## Summation of all triplets
 ### Java
 ```java
