@@ -204,7 +204,6 @@ public static void main(String[] args) {
 }
 
 ```
---- 
 ### Python
 ```python
 class SegmentTree:
