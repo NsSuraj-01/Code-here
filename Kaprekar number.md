@@ -73,7 +73,7 @@ kaprekar $num
 
 1. **Save the code:** Save the above code in a file named `kaprekar.sh`.
 2. **Make it executable:** Run the command `chmod +x kaprekar.sh` in your terminal.
-3. **Run the program:** Execute the command `./kaprekar.sh`.
+3. **Run the program:** Execute the command `bash kaprekar.sh`.
 4. **Enter the number:** When prompted, enter a 4-digit number. 
 
 ## Example Output
